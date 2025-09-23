@@ -1,59 +1,115 @@
-# PracticeAngularTodo
+# 📝 ToDo App con Angular Signals
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.2.
+Este proyecto es una práctica en Angular enfocada en el uso de **signals** (`signal`, `computed`, `effect` y `toSignal`) para manejar estado de manera reactiva.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🎯 Objetivo
 
-```bash
-ng serve
-```
+Construir una aplicación de tareas (**ToDo App**) que permita crear, listar, completar y eliminar tareas, con persistencia en `localStorage` y simulación de una API con RxJS.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## 📋 Requerimientos
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### 1. Configuración inicial
 
-```bash
-ng generate component component-name
-```
+- [ ] La primera vez que se abra la app, debe solicitar el **nombre del usuario**.
+- [ ] Guardar el nombre en **`localStorage`**.
+- [ ] En visitas posteriores, mostrar saludo tipo:  
+       _“Bienvenido de nuevo, Welinton 👋”_.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+### 2. Gestión de Tareas
 
-## Building
+- [ ] Cada tarea debe tener:
 
-To build the project run:
+  - `id` (autogenerado)
+  - `titulo` (obligatorio, máx. 50 caracteres, no repetido)
+  - `descripcion` (opcional, máx. 200 caracteres)
+  - `color` (categoría: rojo = urgente, verde = normal, etc.)
+  - `completada` (boolean)
 
-```bash
-ng build
-```
+- [ ] Validaciones:
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+  - No crear tareas sin título.
+  - No permitir títulos duplicados.
+  - Respetar límites de caracteres.
 
-## Running unit tests
+- [ ] Al marcar como completada, actualizar automáticamente la lista.
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+---
 
-```bash
-ng test
-```
+### 3. Signals y estado
 
-## Running end-to-end tests
+- [ ] Usar un `signal<Task[]>` para manejar la lista de tareas.
+- [ ] Definir `computed` para:
+  - Cantidad total de tareas.
+  - Cantidad de tareas completadas.
+  - Cantidad de tareas pendientes.
+- [ ] Definir `effect` para:
+  - Guardar las tareas en **`localStorage`** cada vez que cambien.
+  - Mostrar en consola un resumen al agregar o completar tareas.
 
-For end-to-end (e2e) testing, run:
+---
 
-```bash
-ng e2e
-```
+### 4. Persistencia
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+- [ ] Al cargar la app:
+  - Si hay tareas en `localStorage`, cargarlas.
+  - Si no, iniciar con lista vacía.
 
-## Additional Resources
+---
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### 5. Interfaz
+
+- [ ] **Formulario de creación de tareas** con título, descripción y color.
+- [ ] **Lista de tareas** que muestre:
+  - Título (estilizado por color).
+  - Descripción en pequeño.
+  - Checkbox para marcar como completada.
+  - Botón para eliminar tarea.
+
+---
+
+### 6. Filtros
+
+- [ ] Incluir un filtro para mostrar:
+  - Todas las tareas.
+  - Solo completadas.
+  - Solo pendientes.
+- [ ] El filtro debe ser un `signal` y aplicarse con un `computed`.
+
+---
+
+### 7. Simulación de API
+
+- [ ] Crear `TasksService` que simule API con RxJS:
+  - Retorne un observable con `of(tareas)` retrasado 2s.
+  - Convertir observable a signal con `toSignal()`.
+- [ ] Mostrar loader mientras se cargan las tareas.
+
+---
+
+### 8. Extras (Opcional)
+
+- [ ] Paginación simple (5 tareas por página).
+- [ ] Ordenar tareas por fecha de creación.
+- [ ] Modo oscuro/claro con `signal<'light' | 'dark'>`.
+- [ ] Botón para **resetear la app** (borrar usuario y tareas de `localStorage`).
+
+---
+
+## 📦 Tecnologías
+
+- Angular 17+
+- Signals (`signal`, `computed`, `effect`, `toSignal`)
+- RxJS
+- localStorage
+
+---
+
+## 📜 Licencia
+
+MIT License – Puedes usar este proyecto como referencia o práctica.
