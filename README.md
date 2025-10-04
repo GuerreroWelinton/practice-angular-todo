@@ -24,7 +24,6 @@ Construir una aplicación de tareas (**ToDo App**) que permita crear, listar, co
 ### 2. Gestión de Tareas
 
 - [ ] Cada tarea debe tener:
-
   - `id` (autogenerado)
   - `titulo` (obligatorio, máx. 50 caracteres, no repetido)
   - `descripcion` (opcional, máx. 200 caracteres)
@@ -32,7 +31,6 @@ Construir una aplicación de tareas (**ToDo App**) que permita crear, listar, co
   - `completada` (boolean)
 
 - [ ] Validaciones:
-
   - No crear tareas sin título.
   - No permitir títulos duplicados.
   - Respetar límites de caracteres.

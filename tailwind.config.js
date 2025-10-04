@@ -5,4 +5,8 @@ module.exports = {
     extend: {},
   },
   plugins: [require('tailwindcss-primeui')],
+  // Configuración para mejor compatibilidad con PrimeNG
+  corePlugins: {
+    preflight: false, // Evita conflictos con estilos de PrimeNG
+  },
 };

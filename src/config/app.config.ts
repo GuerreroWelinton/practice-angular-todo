@@ -5,21 +5,26 @@ import {
 } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 import Aura from '@primeuix/themes/aura';
 import { providePrimeNG } from 'primeng/config';
+import { MessageService } from 'primeng/api';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideZonelessChangeDetection(),
     provideRouter(routes),
+    provideAnimationsAsync(),
+
+    MessageService,
+
     providePrimeNG({
       theme: {
         preset: Aura,
         options: {
           prefix: 'p',
-          darkModeSelector: 'system',
           cssLayer: {
             name: 'primeng',
             order: 'theme, base, primeng',

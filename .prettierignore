@@ -1,0 +1,16 @@
+# Ignorar archivos de build
+dist/
+build/
+coverage/
+
+# Ignorar node_modules
+node_modules/
+
+# Ignorar archivos de configuración que no necesitan formato
+*.min.js
+*.min.css
+package-lock.json
+yarn.lock
+
+# Ignorar archivos de Angular generados
+.angular/
