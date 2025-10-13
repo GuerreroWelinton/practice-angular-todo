@@ -9,7 +9,7 @@ export const guestGuard: CanActivateFn = (route, state) => {
   const isAuthenticated = authService.user() !== null;
 
   if (isAuthenticated) {
-    return router.parseUrl('/todo/dashboard');
+    return router.parseUrl('/task/dashboard');
   }
 
   return true;

@@ -23,14 +23,14 @@ Construir una aplicación de tareas (**ToDo App**) que permita crear, listar, co
 
 ### 2. Gestión de Tareas
 
-- [ ] Cada tarea debe tener:
+- [x] Cada tarea debe tener:
   - `id` (autogenerado)
   - `titulo` (obligatorio, máx. 50 caracteres, no repetido)
   - `descripcion` (opcional, máx. 200 caracteres)
   - `color` (categoría: rojo = urgente, verde = normal, etc.)
   - `completada` (boolean)
 
-- [ ] Validaciones:
+- [x] Validaciones:
   - No crear tareas sin título.
   - No permitir títulos duplicados.
   - Respetar límites de caracteres.
@@ -41,14 +41,13 @@ Construir una aplicación de tareas (**ToDo App**) que permita crear, listar, co
 
 ### 3. Signals y estado
 
-- [ ] Usar un `signal<Task[]>` para manejar la lista de tareas.
-- [ ] Definir `computed` para:
+- [x] Usar un `signal<Task[]>` para manejar la lista de tareas.
+- [x] Definir `computed` para:
   - Cantidad total de tareas.
   - Cantidad de tareas completadas.
   - Cantidad de tareas pendientes.
 - [ ] Definir `effect` para:
   - Guardar las tareas en **`localStorage`** cada vez que cambien.
-  - Mostrar en consola un resumen al agregar o completar tareas.
 
 ---
 

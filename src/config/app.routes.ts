@@ -7,10 +7,10 @@ export const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: '/todo/dashboard',
+    redirectTo: '/task/dashboard',
   },
   {
-    path: 'todo',
+    path: 'task',
     canActivate: [authGuard],
     loadComponent: () =>
       import('../shared/layouts/content-layout/content-layout').then((m) => m.ContentLayout),
@@ -18,8 +18,8 @@ export const routes: Routes = [
       {
         path: 'dashboard',
         loadComponent: () =>
-          import('../features/todo/pages/todo-dashboard/todo-dashboard').then(
-            (m) => m.TodoDashboard,
+          import('../features/tasks/pages/task-dashboard/task-dashboard').then(
+            (m) => m.TaskDashboard,
           ),
       },
     ],

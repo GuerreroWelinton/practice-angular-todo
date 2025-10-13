@@ -1,0 +1,8 @@
+<div class="flex flex-col items-center gap-2">
+  <p>Welcome to {{ username() }}!</p>
+  <p>Total tasks: {{ totalTasks() }}</p>
+  <p>Completed tasks: {{ completedTasks() }}</p>
+  <p>Pending tasks: {{ pendingTasks() }}</p>
+  <p>Tasks:</p>
+  <pre>{{ tasks() | json }}</pre>
+</div>

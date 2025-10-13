@@ -1,4 +1,4 @@
-import { inject, Injectable, signal } from '@angular/core';
+import { computed, inject, Injectable, signal } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { AlertService } from '../ui/alert.service';
@@ -18,6 +18,7 @@ export class AuthService {
 
   readonly user = this.#user.asReadonly();
   readonly isLoadingRegistration = this.#isLoadingRegistration.asReadonly();
+  readonly username = computed(() => this.#user()?.username.toLowerCase() || '');
 
   loadUserSession() {
     const userData = localStorage.getItem(LOCAL_STORAGE_KEYS.USER);
