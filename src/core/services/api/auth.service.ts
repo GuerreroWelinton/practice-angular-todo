@@ -24,7 +24,10 @@ export class AuthService {
     if (userData) {
       const user: User = JSON.parse(userData);
       this.#user.set(user);
-      this.#alertService.showInfo({ message: MESSAGES.WELCOME_BACK(user.username) });
+
+      setTimeout(() => {
+        this.#alertService.showInfo({ message: MESSAGES.WELCOME_BACK(user.username) });
+      }, 100);
     } else {
       this.#user.set(null);
     }
