@@ -39,6 +39,6 @@ export const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '/todo/dashboard',
+    redirectTo: '/task/dashboard',
   },
 ];
