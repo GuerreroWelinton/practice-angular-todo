@@ -14,10 +14,10 @@ Construir una aplicación de tareas (**ToDo App**) que permita crear, listar, co
 
 ### 1. Configuración inicial
 
-- [✅] La primera vez que se abra la app, debe solicitar el **nombre del usuario**.
-- [✅] Guardar el nombre en **`localStorage`**.
-- [✅] En visitas posteriores, mostrar saludo tipo:  
-   _“Bienvenido de nuevo, Welinton 👋”_.
+- [x] La primera vez que se abra la app, debe solicitar el **nombre del usuario**.
+- [x] Guardar el nombre en **`localStorage`**.
+- [x] En visitas posteriores, mostrar saludo tipo:  
+       _“Bienvenido de nuevo, Welinton 👋”_.
 
 ---
 
