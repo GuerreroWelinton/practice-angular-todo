@@ -6,11 +6,10 @@
     "outDir": "./out-tsc/app",
     "baseUrl": "src",
     "paths": {
-      "@core/*": ["core/*"],
-      "@shared/*": ["shared/*"],
-      "@features/*": ["features/*"],
-      "@config/*": ["config/*"],
-      "@assets/*": ["assets/*"]
+      "@core/*": ["app/core/*"],
+      "@shared/*": ["app/shared/*"],
+      "@features/*": ["app/features/*"],
+      "@config/*": ["app/config/*"]
     },
     "types": []
   },
